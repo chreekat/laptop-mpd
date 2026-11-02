@@ -114,7 +114,7 @@ monitor appears on the Thinkpad. Done.
    Saved Games. Pairing is by hand: `moonlight pair smilga` on kuusi, the
    PIN into Sunshine's web UI.
 3. NixOS: `nixos/moonlight.nix`, imported by kuusi in
-   `nixos/systems/flake.nix`. Adds `pkgs.moonlight-qt` and a `dcs-mpd` script
+   `nixos/systems/flake.nix`. Adds `pkgs.moonlight-qt` and a `laptop-mpd` script
    wrapping the `moonlight stream` invocation with the host, resolution,
    fps and bitrate baked in. Check: the demo above.
 

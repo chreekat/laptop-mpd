@@ -1,8 +1,8 @@
-# The Thinkpad side of dcs-mpd: Moonlight, and `dcs-mpd` to show smilga's
+# The Thinkpad side of laptop-mpd: Moonlight, and `laptop-mpd` to show smilga's
 # virtual monitor fullscreen. Pair once by hand with `moonlight pair smilga`.
 { pkgs, ... }:
 let
-  dcs-mpd = pkgs.writeShellScriptBin "dcs-mpd" ''
+  laptop-mpd = pkgs.writeShellScriptBin "laptop-mpd" ''
     # Compiled QML is rebuilt on every start rather than read from
     # ~/.cache, which outlives a moonlight-qt upgrade.
     export QML_DISABLE_DISK_CACHE=1
@@ -19,6 +19,6 @@ in
 {
   environment.systemPackages = [
     pkgs.moonlight-qt
-    dcs-mpd
+    laptop-mpd
   ];
 }

@@ -1,4 +1,4 @@
-# dcs-mpd
+# laptop-mpd
 
 Turn the NixOS Thinkpad into a secondary display for the AH-64D's MPDs while
 DCS World runs on the Windows machine.
@@ -39,7 +39,7 @@ Once per machine:
 
 Every flight:
 
-1. kuusi: `META+F4` (or `dcs-mpd` in a terminal). The stream goes fullscreen
+1. kuusi: `META+F4` (or `laptop-mpd` in a terminal). The stream goes fullscreen
    on its own; `META+Q` toggles it if not.
 2. smilga: start DCS as usual. The virtual monitor is always present, so
    order does not matter.
@@ -47,7 +47,7 @@ Every flight:
    exits.
 
 If the stream drops mid-flight, `META+F4` again. If Moonlight sits on
-"Starting Desktop..." instead, run `dcs-mpd` in a terminal and read its last
+"Starting Desktop..." instead, run `laptop-mpd` in a terminal and read its last
 lines: a `StreamSegue.qml` TypeError is Moonlight's stale QML cache after an
 upgrade (delete `~/.cache/Moonlight Game Streaming Project/Moonlight/qmlcache`);
 anything else is Sunshine's side, and `sunshine.log` under

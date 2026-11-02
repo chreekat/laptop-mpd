@@ -1,5 +1,5 @@
 #Requires -RunAsAdministrator
-# Windows side of dcs-mpd. Idempotent: rerun after each manual step it asks
+# Windows side of laptop-mpd. Idempotent: rerun after each manual step it asks
 # for, from an elevated PowerShell:
 #
 #     powershell -ExecutionPolicy Bypass -File install.ps1
@@ -14,13 +14,13 @@ $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $panelWidth = 1920
 $panelHeight = 1080
 
-function Say($msg) { Write-Host "dcs-mpd: $msg" }
+function Say($msg) { Write-Host "laptop-mpd: $msg" }
 
 # A manual step is one this script cannot do; it ends the run so the steps
 # after it, which depend on it, are not attempted against a half-done system.
 function Manual($what) {
     Write-Host ''
-    Write-Host "dcs-mpd: BY HAND, then rerun this script:" -ForegroundColor Yellow
+    Write-Host "laptop-mpd: BY HAND, then rerun this script:" -ForegroundColor Yellow
     Write-Host "    $what" -ForegroundColor Yellow
     exit 1
 }
@@ -194,5 +194,5 @@ Write-Host ''
 Say "done. Left to do by hand, once:"
 Say "  1. https://localhost:47990 - set Sunshine's web UI username and password"
 Say "  2. on kuusi: moonlight pair smilga, then type the PIN into the web UI's PIN page"
-Say "  3. on kuusi: dcs-mpd, and drag a window onto the virtual monitor"
+Say "  3. on kuusi: laptop-mpd, and drag a window onto the virtual monitor"
 Say "  4. in DCS: Options > System: resolution ${windowW}x${windowH}, Fullscreen unchecked, Monitors = ThinkpadMPD"

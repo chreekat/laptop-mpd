@@ -1,6 +1,6 @@
 @../dotfiles/claude/CLAUDE.md
 
-# dcs-mpd
+# laptop-mpd
 
 Pixels flow Windows -> Thinkpad only. DCS, the virtual display, and Sunshine
 run on the Windows machine; the Thinkpad (NixOS, `kuusi`) runs Moonlight
