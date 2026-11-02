@@ -58,13 +58,14 @@ lines filtered out, says what.
 
 - `windows/` -- files copied to the Windows machine: the DCS monitor-setup
   Lua, Sunshine and virtual-display settings, an install script.
-- `nixos/` -- the NixOS module for the Thinkpad side, imported from
-  `nixos/systems/flake.nix`.
+- `nixos/` -- the NixOS module for the Thinkpad side, exposed by `flake.nix`.
 
-## Moving to its own repo
+## Hooking it up
 
-This directory lives in dotfiles only until the tracer bullet works. When it
-moves out: `CLAUDE.md` imports the global rules with `@../claude/CLAUDE.md`,
-which must then point at wherever dotfiles is checked out, and
-`nixos/systems/flake.nix` must take the module as a flake input instead of a
-relative path.
+- kuusi imports `nixosModules.default` from this flake, as the `laptop-mpd`
+  input of `nixos/systems/flake.nix` in dotfiles.
+- The notion binding (`META+F4`) and the winprop that fullscreens the stream
+  window live in dotfiles, in `notion/cfg_bindings.lua` and
+  `notion/cfg_kludges.lua`.
+- `CLAUDE.md` imports the global rules from a `dotfiles` checkout beside this
+  repo, which is where both live on the laptop and in cloud sessions.
